@@ -23,15 +23,15 @@ jobs:
       run: go test -v ./...
       
 
-    - name: Deploy the app
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{secrets.PUBLIC_IP}}
-        username: ${{secrets.USERNAME}}
-        key: ${{secrets.SSH_KEY}}
-        script: |
-          echo "Connected to Server"
-          docker compose stop ${{secrets.IMAGE_NAME}} 
-          docker compose rm ${{secrets.IMAGE_NAME}}
-          docker compose up -d
-          echo "Deployment success"
+    # - name: Deploy the app
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: ${{secrets.PUBLIC_IP}}
+    #     username: ${{secrets.USERNAME}}
+    #     key: ${{secrets.SSH_KEY}}
+    #     script: |
+    #       echo "Connected to Server"
+    #       docker compose stop ${{secrets.IMAGE_NAME}} 
+    #       docker compose rm ${{secrets.IMAGE_NAME}}
+    #       docker compose up -d
+    #       echo "Deployment success"
