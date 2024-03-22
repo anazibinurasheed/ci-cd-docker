@@ -23,7 +23,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
-        run: docker build --file Dockerfile --tag chamodshehanka/node-test .
+        run: docker build --file Dockerfile --tag  ${{ secrets.DOCKER_USERNAME }}/node-test .
 
       - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USER }}/ci-cd-docker-demo-push
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/ci-cd-docker-demo-push
