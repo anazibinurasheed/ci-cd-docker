@@ -3,7 +3,8 @@ package main
 import (
 	"net/http"
 	"os"
-
+"fmt"
+	
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -14,7 +15,9 @@ func main() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-
+	helloworldwherrareyou:="helloworldwherrareyou"
+	fmt.Println(fmt.Sprint(helloworldwherrareyou))
+	
 	e.GET("/", func(c echo.Context) error {
 		return c.HTML(http.StatusOK, "Hello, Docker! <3")
 	})
