@@ -26,4 +26,4 @@ jobs:
         run: docker build --file Dockerfile --tag anazibinurasheed/node-test .
 
       - name: Docker Push
-        run: docker push /ci-cd-docker-demo-push
+        run: docker push anazibinurasheed/ci-cd-docker-demo-push
